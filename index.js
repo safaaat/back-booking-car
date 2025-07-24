@@ -1,7 +1,7 @@
 import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
-// import { CarRoutes } from "./routers/Index.js";
+import { CarRoutes } from "./routers/Index.js";
 
 dotenv.config();
 const app = express();
@@ -15,8 +15,10 @@ app.use(cors({
     credentials: true
 }));
 
+app.use(express.urlencoded({ extended: false }));
+app.use(express.json());
 // Router
-// app.use(CarRoutes);
+app.use(CarRoutes);
 
 app.get("/", (req, res) => {
     res.send("Hello World");
