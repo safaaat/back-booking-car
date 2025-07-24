@@ -1,0 +1,116 @@
+// Get All Car
+GET http://localhost:5000/car
+
+###
+// Create Car
+POST http://localhost:5000/car
+Content-Type: application/json
+
+{
+    "image": "Toyota-Avanza",
+    "name": "Toyota Avanza"
+}
+
+###
+// Update Car
+PATCH http://localhost:5000/car/1
+Content-Type: application/json
+
+{
+    "image": "Honda-City-Hatchback-RS",
+    "name": "Honda City Hatchback RS"
+}
+
+###
+// Remove Car
+DELETE http://localhost:5000/car/remove
+Content-Type: application/json
+
+{
+    "arrayId": [1,2,3,4,5]
+}
+
+###
+// Get All Car
+GET http://localhost:5000/booking
+
+###
+// Edit Car
+PATCH http://localhost:5000/car/edit
+Content-Type: application/json
+
+{
+    "id": 1,
+    "name": "Honda City Hatchback RS"
+}
+
+###
+// POST BOOKING CAR
+POST http://localhost:5000/booking
+Content-Type: application/json
+
+{
+    "id_car": 17,
+    "is_confirmed": false,
+    "name_car": "Toyota-Avanza",
+    "url_images": "{'image1':'1753074058864943b08a8-64f0-44b9-893b-e5898ab556db.webp'}",
+    "name_user": "zee",
+    "email": "zee@gmail.com",
+    "phone_number":"0812848242",
+    "start_time": 1753203600,
+    "end_time": 1753290000
+}
+
+###
+// POST Register Admin
+POST http://localhost:5000/admin/register
+Content-Type: application/json
+
+{
+    "password": 123456
+}
+
+###
+// POST Login Admin
+POST http://localhost:5000/admin/login
+Content-Type: application/json
+
+{
+    "password": 123456
+}
+
+###
+// POST BOOKING CAR
+POST http://localhost:5000/booking
+Content-Type: application/json
+
+{
+    "id_car": 18,
+    "is_confirmed": false,
+    "name_car": "Toyota-Avanza",
+    "url_images": "{'image1':'1753074058864943b08a8-64f0-44b9-893b-e5898ab556db.webp'}",
+    "name_user": "zee",
+    "email": "zee@gmail.com",
+    "phone_number":"0812848242",
+    "start_time": 1753203600,
+    "end_time": 1753290000
+}
+
+###
+// Confirmasi Booking Car
+PATCH http://localhost:5000/confirmasi_booking/11
+Content-Type: application/json
+
+{
+    "id_car": 18
+}
+
+###
+// Confirmasi Booking Car
+DELETE http://localhost:5000/booking/remove/27
+Content-Type: application/json
+
+
+###
+// Get Riwayat
+GET http://localhost:5000/riwayat
