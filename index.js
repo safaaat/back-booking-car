@@ -1,7 +1,7 @@
 import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
-import { CarRoutes } from "./routers/Index.js";
+// import { CarRoutes } from "./routers/Index.js";
 
 dotenv.config();
 const app = express();
@@ -15,12 +15,12 @@ app.use(cors({
     credentials: true
 }));
 
+// Router
+// app.use(CarRoutes);
+
 app.get("/", (req, res) => {
     res.send("Hello World");
 })
-
-// Router
-app.use(CarRoutes);
 
 app.listen(PORT, () => {
     console.log(`run Server ${PORT}`)
