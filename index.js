@@ -2,6 +2,7 @@ import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
 // import { CarRoutes } from "./routers/Index.js";
+import db from "./config/database.js";
 
 dotenv.config();
 const app = express();
@@ -14,6 +15,14 @@ app.use(cors({
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
     credentials: true
 }));
+
+// Tes koneksi DB saat server start
+try {
+    await db.authenticate();
+    console.log("✅ Database connected");
+} catch (error) {
+    console.error("❌ Gagal konek DB:", error.message);
+}
 
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
